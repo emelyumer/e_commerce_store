@@ -50,7 +50,7 @@
                         <div class="row p-3">
 
                             <div class="col-6">
-
+                             {% if product.qty %}
 
                                 <label for="select">Qty</label>
 
@@ -67,16 +67,19 @@
                                     <option value="4">4</option>
 
                                 </select>
+                                {% endif %}
 
                             </div>
-
+                            {% if product.qty %}
                             <div class="col-6 text-end">
-
                                 <button type="button" id="add-button" value="{{product.id}}" class="btn btn-secondary btn-sm">
-
                                     <i class="fa fa-plus" aria-hidden="true"></i> &nbsp; Add to cart
-
                                 </button>
+                            {% else %}
+                                <button type="button" id="add-button" disable_button = True  class="btn btn-secondary btn-sm">
+                                    <i aria-hidden="true"></i> &nbsp; Out of stock
+                                </button>
+                            {% endif %}
 
 
                             </div>
