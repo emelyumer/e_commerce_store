@@ -1,5 +1,5 @@
 from decimal import Decimal
-
+import copy
 from store.models import Product
 
 
@@ -63,7 +63,9 @@ class Cart():
 
         products = Product.objects.filter(id__in=all_product_ids)
 
-        cart = self.cart.copy()
+        cart = copy.deepcopy(self.cart)
+
+        # cart = self.cart.copy()
 
         for product in products:
             cart[str(product.id)]['product'] = product
