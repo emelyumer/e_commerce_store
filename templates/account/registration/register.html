@@ -1,0 +1,28 @@
+{% include 'store/base.html' %}
+{% load static %}
+
+{% block content %}
+    <body>
+        <br>
+        <div class="container bg-white shadow-md p-5">
+            <h3>Create your account</h3>
+
+            <h5>Purchase your favorite items today!</h5>
+            <br>
+            <br>
+            <form method="post" autocomplete="off">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <br>
+                <br>
+                <button type="submit" class="btn btn-secondary btn-lg w-100 btn-block p-2">
+                    &nbsp; Create account
+                </button>
+
+            </form>
+
+        </div>
+    </body>
+
+
+{% endblock %}
