@@ -1,18 +1,30 @@
 {% include 'store/base.html' %}
 {% load static %}
+{% load crispy_forms_tags %}
+{% load crispy_forms_filters %}
 
 {% block content %}
+    <style>
+        body{
+            background-color: rgb(128, 128, 128);
+        }
+    </style>
     <body>
         <br>
-        <div class="container bg-white shadow-md p-5">
+        <div class="container form-layout bg-white shadow-md p-5 ">
             <h3>Create your account</h3>
 
             <h5>Purchase your favorite items today!</h5>
             <br>
-            <br>
             <form method="post" autocomplete="off">
                 {% csrf_token %}
-                {{ form.as_p }}
+
+                {{ form.username|as_crispy_field }}
+                <br>
+                {{ form.email|as_crispy_field }}
+                <br>
+                {{ form.password1|as_crispy_field }}
+                {{ form.password2|as_crispy_field }}
                 <br>
                 <br>
                 <button type="submit" class="btn btn-secondary btn-lg w-100 btn-block p-2">
@@ -23,6 +35,7 @@
 
         </div>
     </body>
+    <br>
 
 
 {% endblock %}
