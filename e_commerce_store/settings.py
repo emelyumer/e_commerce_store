@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'store',
     'cart',
     'account',
+    'payment',
     'mathfilters',
     'crispy_forms',
 ]
@@ -137,3 +138,16 @@ MEDIA_URL = "/media/"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Email configuration settings:
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = '587'
+EMAIL_USE_TLS = 'True'
+
+
+EMAIL_HOST_USER = 'emel.yumer7@gmail.com'
+EMAIL_HOST_PASSWORD = 'fmob unmi ibry ousy'
+# EMAIL_HOST_PASSWORD = 'zauchebniceli21/04/24'
+
